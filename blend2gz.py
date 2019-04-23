@@ -4,7 +4,6 @@
 import bpy
 
 selected = bpy.data.objects[0]
-
 blend_x = selected.location[0]
 blend_y = selected.location[1]
 blend_z = selected.location[2]
@@ -17,4 +16,7 @@ conv = [gz_x, gz_y, gz_z]
 
 output = ["%.3f" % c for c in conv]
 
-print(output)
+models = bpy.data.objects
+for model in models:
+    print(model)
+    print(output)
