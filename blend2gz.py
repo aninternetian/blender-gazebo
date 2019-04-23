@@ -1,22 +1,26 @@
-# blender to gazebo cordinates converter
-# paste blender coordinates here
+'''blender to gazebo cordinates converter'''
 
 import bpy
 
-selected = bpy.data.objects[0]
-blend_x = selected.location[0]
-blend_y = selected.location[1]
-blend_z = selected.location[2]
-
-gz_x = (blend_y * -1) / 100
-gz_y = (blend_x * -1) / 100
-gz_z = blend_z / 100
-
-conv = [gz_x, gz_y, gz_z]
-
-output = ["%.3f" % c for c in conv]
+bpy.ops.script.python_file_run(filepath="/snap/blender/20/2.79/scripts/presets/units_length/meters.py")
 
 models = bpy.data.objects
+
 for model in models:
     print(model)
-    print(output)
+
+    blend_x = model.location[0]
+    print("Original_X: " + str(blend_x))
+    blend_y = model.location[1]
+    print("Original_Y: " + str(blend_y))
+    blend_z = model.location[2]
+    print("Original_Z: " + str(blend_z))
+
+    gz_x = (blend_y * -1)
+    gz_y = (blend_x * -1)
+    gz_z = blend_z
+
+    conv = [gz_x, gz_y, gz_z]
+    
+    for c in conv:
+        print(round(c, 3))
