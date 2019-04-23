@@ -1,23 +1,22 @@
 # Blender to Gazebo
 
-Translate the coordinates of a mesh in Blender into Gazebo.
+Translates and sends models into Gazebo with the right coordinates
 
 ## About this script
 
-This is a simple script to convert Blender's object coordinates to Gazebo.
-It's currently written in Python and only able to run in the console/API.
+This is a simple script to convert Blender's object coordinates to Gazebo. It is currently able to run from Blender's scripting UI.
 
 ## Disclaimer
 
-This is my first time writing a script so it's pretty lengthy.
-I wrote this to practice the Python syntax and automate my work.
+One of my first few scripting projects.
+Written to practice scripting, the Python syntax and to automate my work.
 
 ## How to use
-Follow the instructions and copy the translated coordinates into Gazebo's SDF.
+You have to currently select the object to get the coordinates. Copy it into your Gazebo's SDF.
 
 ## To-do's
 
-* Multiple test of the script is needed.
+* Multiple test of the script might still be needed.
 * Simplify and make the code look pretty.
-* Get this script up and running into Blender with a "copy" button.
+* Get this script up and running into Blender with a UI button.
 * Automate it further so that it auto-fills in Gazebo's SDF.
