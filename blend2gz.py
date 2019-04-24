@@ -24,9 +24,6 @@ for model in models:
     
     print(output)
 
-# rnd = ["%.3f" % c for c in conv]    # this goes first
-# output = "{0} {1} {2}".format(conv[0], conv[1], conv[2]
-
 print("~~~~~~~~~~")
 
 # TO-DOS
