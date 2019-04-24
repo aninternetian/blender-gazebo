@@ -1,4 +1,4 @@
-'''Writes all your blender models into the gazebo SDF'''
+'''Translates all objects location in your scene into the gazebo SDF'''
 
 import bpy
 import os 
