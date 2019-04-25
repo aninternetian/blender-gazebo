@@ -20,7 +20,7 @@ class GzLog(bpy.types.Panel):
         row.prop(obj, "name")
 
         row = layout.row()
-        row.operator("mesh.primitive_cube_add")
+        row.operator("bpy.ops.")
 
 
 def register():

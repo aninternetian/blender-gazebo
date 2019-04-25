@@ -3,15 +3,19 @@
 import bpy
 import os 
 
+# <pep8 compliant>
+
 dir_path = os.path.dirname(os.path.realpath("/meters.py"))
 bpy.ops.script.python_file_run(filepath=dir_path)
+
+f = open('log.txt', 'w')
 
 models = bpy.data.objects
 
 print("~~~~~~~~~~")
 
 for model in models:
-    print(model.name)
+    f.write(model.name + "\n")
 
     gz_x = (model.location[1] * -1) + 0
     gz_y = (model.location[0] * -1) + 0
@@ -22,10 +26,10 @@ for model in models:
     rnd = ["%.3f" % c for c in conv] 
     output = "{0} {1} {2}".format(rnd[0], rnd[1], rnd[2])
     
-    print(output)
+    f.write(output + "\n")
 
 print("~~~~~~~~~~")
 
 # TO-DOS
 ###
-# button in blender to export log file (for now)
+# button in blender
