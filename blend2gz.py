@@ -12,8 +12,6 @@ f = open('log.txt', 'w')
 
 models = bpy.data.objects
 
-print("~~~~~~~~~~")
-
 for model in models:
     f.write(model.name + "\n")
 
@@ -27,8 +25,6 @@ for model in models:
     output = "{0} {1} {2}".format(rnd[0], rnd[1], rnd[2])
     
     f.write(output + "\n")
-
-print("~~~~~~~~~~")
 
 # TO-DOS
 ###
