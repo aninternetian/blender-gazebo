@@ -1,20 +1,18 @@
 import bpy
 
-
 class GzLog(bpy.types.Panel):
     bl_label = "Gazebo2Blender"
-    bl_idname = "OBJECT_PT_hello"
+    bl_idname = "OBJECT_PT_log"
     bl_space_type = 'PROPERTIES'
     bl_region_type = 'WINDOW'
     bl_context = "object"
 
     def draw(self, context):
         layout = self.layout
-
         obj = context.object
 
         row = layout.row()
-        row.label(text="Hello world!", icon='WORLD_DATA')
+        row.label(text="Export:")
 
         row = layout.row()
         row.label(text="Active object is: " + obj.name)
@@ -26,12 +24,10 @@ class GzLog(bpy.types.Panel):
 
 
 def register():
-    bpy.utils.register_class(HelloWorldPanel)
-
+    bpy.utils.register_class(GzLog)
 
 def unregister():
-    bpy.utils.unregister_class(HelloWorldPanel)
-
+    bpy.utils.unregister_class(GzLog)
 
 if __name__ == "__main__":
     register()

@@ -11,7 +11,7 @@ models = bpy.data.objects
 print("~~~~~~~~~~")
 
 for model in models:
-    print(model)
+    print(model.name)
 
     gz_x = (model.location[1] * -1) + 0
     gz_y = (model.location[0] * -1) + 0
