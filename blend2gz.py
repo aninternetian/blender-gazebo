@@ -28,5 +28,4 @@ print("~~~~~~~~~~")
 
 # TO-DOS
 ###
-# print only object name
-# button in blender
+# button in blender to export log file (for now)
