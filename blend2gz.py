@@ -2,9 +2,8 @@
 
 import bpy
 import argparse
-# import sdformatpy
 
-# def blend_sdf():
+# def blend_sdf(output_filename):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -44,7 +43,17 @@ if __name__ == "__main__":
 
     f.close()
 
-# TO-DOS
-###
+##########
+# TO-DOS #
+##########
+# 0.0
 # wrap this into a function
-# print output from button in blender
+# read argparse
+#####
+# import sdformatpy
+# import io_scene_obj.export_obj
+
+# io_scene_obj.export_obj.save(bpy.context, output_filename, global_matrix=Matrix.Identity(4), use_normals=True)
+
+# output_obj_extension = output_filename.find('.obj')
+# output_mtl_file = output_filename[:output_obj_extension] + '.mtl'

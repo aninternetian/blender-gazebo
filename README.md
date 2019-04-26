@@ -2,6 +2,9 @@
 
 It collects all models and their locations, convert it's coordinates into an SDF format.
 
+Example you have a robot with 6 wheels.
+This script will gather all the locations of the wheels and the robot.
+
 ## How to use
 
 Open terminal in mesh folder
@@ -23,12 +26,8 @@ Your last line should look something like this:
 
 ## Disclaimer
 
-* SDF automation is not done yet, so you'll still need to fill in your sdf file with teh coordinates and the model info.
+* Do NOT `apply location` of objects
+* SDF automation is not done yet, so you'll still need to fill in your sdf file with the coordinates and the model info.
+* You still have to export your models
 * One of my first few scripting projects.
 * Written to practice scripting, the Python syntax and to automate my work.
-
-## To-do's
-
-* Simplify and make the code look pretty.
-* Get this script up and running into Blender with a UI button.
-* Automate it further so that it auto-fills in Gazebo's SDF.
