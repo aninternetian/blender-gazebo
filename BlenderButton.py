@@ -1,7 +1,7 @@
 import bpy
 
 class BlenderButton(bpy.types.Panel):
-    bl_label = "Gazebo2Blender"
+    bl_label = "Blender to Gazebo"
     bl_idname = "OBJECT_PT_log"
     bl_space_type = 'PROPERTIES'
     bl_region_type = 'WINDOW'
@@ -12,16 +12,10 @@ class BlenderButton(bpy.types.Panel):
         obj = context.object
 
         row = layout.row()
-        row.label(text="Export:")
+        row.prop(obj, "Export")
 
         row = layout.row()
-        row.label(text="Active object is: " + obj.name)
-        row = layout.row()
-        row.prop(obj, "name")
-
-        row = layout.row()
-        row.operator("bpy.ops.")
-
+        row.operator("")
 
 def register():
     bpy.utils.register_class(BlenderButton)
