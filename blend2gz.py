@@ -3,7 +3,29 @@
 import bpy
 import argparse
 
-# def blend_sdf(output_filename):
+scene = bpy.context.scene
+
+scene.unit_settings.system = 'METRIC'
+scene.unit_settings.scale_length = 1.0
+
+f = open(args.output, 'w')
+
+def transform(num):
+    return "%.2f" % num if num else '0'
+
+    models = bpy.data.objects
+    coords = model.location
+
+    for model in models:
+        f.write(model.name)
+
+        position = []
+        position.append(coords[1] * -1 + 0)
+        position.append(coords[0] * -1 + 0)
+        position.append(coords[2] + 0)
+        f.write(' '.join(map(transform, position)))
+
+f.close()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -17,31 +39,6 @@ if __name__ == "__main__":
     args, _ = parser.parse_known_args(script_args)
 
     bpy.ops.wm.open_mainfile(filepath=args.input)
-
-    scene = bpy.context.scene
-
-    scene.unit_settings.system = 'METRIC'
-    scene.unit_settings.scale_length = 1.0
-
-    f = open(args.output, 'w')
-
-    models = bpy.data.objects
-
-    for model in models:
-        f.write(model.name + "\n")
-
-        gz_x = (model.location[1] * -1) + 0
-        gz_y = (model.location[0] * -1) + 0
-        gz_z = (model.location[2]) + 0
-
-        conv = [gz_x, gz_y, gz_z]
-
-        rnd = ["%.3f" % c for c in conv] 
-        output = "{0} {1} {2}".format(rnd[0], rnd[1], rnd[2])
-        
-        f.write(output + "\n\n")
-
-    f.close()
 
 ##########
 # TO-DOS #
