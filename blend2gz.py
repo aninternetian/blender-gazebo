@@ -3,6 +3,31 @@
 import bpy
 import argparse
 
+def transform(num):
+    scene = bpy.context.scene
+
+    scene.unit_settings.system = 'METRIC'
+    scene.unit_settings.scale_length = 1.0
+
+    models = bpy.data.objects
+
+    f = open(args.output, 'w')
+
+    return "%.2f" % num if num else '0'
+
+    for model in models:
+        f.write(model.name)
+
+        coords = model.location
+        position = []
+
+        position.append(coords[1] * -1 + 0)
+        position.append(coords[0] * -1 + 0)
+        position.append(coords[2] + 0)
+        f.write(' '.join(map(transform, position)))
+
+    f.close()
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
@@ -15,31 +40,6 @@ if __name__ == "__main__":
     args, _ = parser.parse_known_args(script_args)
 
     bpy.ops.wm.open_mainfile(filepath=args.input)
-
-    scene = bpy.context.scene
-
-    scene.unit_settings.system = 'METRIC'
-    scene.unit_settings.scale_length = 1.0
-
-    models = bpy.data.objects
-
-    f = open(args.output, 'w')
-
-    def transform(num):
-        return "%.2f" % num if num else '0'
-
-        for model in models:
-            f.write(model.name)
-
-            coords = model.location
-            position = []
-
-            position.append(coords[1] * -1 + 0)
-            position.append(coords[0] * -1 + 0)
-            position.append(coords[2] + 0)
-            f.write(' '.join(map(transform, position)))
-
-    f.close()
 
 ####################
 # argparse
