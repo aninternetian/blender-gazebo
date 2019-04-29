@@ -14,7 +14,7 @@ source ~/rmf/build/ros1_mainline/install/setup.bash
 ```
 
 Type in the following line:  
-`blender -b -P ~/blender2gazebo/blend2gz.py -- `
+`blender -b -P ~/blender2gazebo/blend2gz.py --  `
 
 Along with:
 
