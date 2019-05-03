@@ -1,4 +1,4 @@
-'''Translates all objects location in your scene into the gazebo SDF'''
+'''This works with blender gui'''
 
 import bpy
 

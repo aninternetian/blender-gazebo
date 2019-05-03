@@ -1,4 +1,4 @@
-'''Translates all objects location in your scene into the gazebo SDF'''
+'''Translates all objects location in the blender scene into the gazebo SDF'''
 
 import argparse
 import bpy
@@ -31,11 +31,11 @@ if __name__ == "__main__":
         coords = model.location
         pos = []
 
-        pos.append(coords[1] * -1)
         pos.append(coords[0] * -1)
+        pos.append(coords[1] * -1)
         pos.append(coords[2])
 
         trans = ["%.2f" % p for p in pos]
-        f.write(' '.join(trans) + "\n")
+        f.write(' '.join(trans) + " 0 0 0\n")
 
     f.close()
