@@ -1,41 +1,7 @@
 '''Translates all objects location in your scene into the gazebo SDF'''
 
-import bpy
 import argparse
-
-def set_unit():
-    # this section changes unit
-    scene = bpy.context.scene
-
-    scene.unit_settings.system = 'METRIC'
-    scene.unit_settings.scale_length = 1.0
-
-    check_models()
-
-def check_models():
-
-    models = bpy.data.objects
-
-    f = open(args.output, 'w')
-
-    for model in models:
-        print_coords(model, f)
-
-    f.close()
-
-def transform(num):
-    return "%.2f" % num if num else '0'
-
-def print_coords(model, f):
-    f.write(model.name + "\n")
-
-    coords = model.location
-    position = []
-
-    position.append(coords[0] * -1 + 0)
-    position.append(coords[1] * -1 + 0)
-    position.append(coords[2] + 0)
-    f.write(' '.join(map(transform, position)) + "\n")
+import bpy
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -50,4 +16,26 @@ if __name__ == "__main__":
 
     bpy.ops.wm.open_mainfile(filepath=args.input)
 
-    set_unit()
+    scene = bpy.context.scene
+
+    scene.unit_settings.system = 'METRIC'
+    scene.unit_settings.scale_length = 1.0
+
+    models = bpy.data.objects
+
+    f = open(args.output, 'w')
+
+    for model in models:
+        f.write(model.name + "\n")
+        
+        coords = model.location
+        pos = []
+
+        pos.append(coords[1] * -1)
+        pos.append(coords[0] * -1)
+        pos.append(coords[2])
+
+        trans = ["%.2f" % p for p in pos]
+        f.write(' '.join(trans) + "\n")
+
+    f.close()

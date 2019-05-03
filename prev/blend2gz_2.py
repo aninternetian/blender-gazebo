@@ -10,20 +10,18 @@ scene.unit_settings.scale_length = 1.0
 models = bpy.data.objects
 
 for model in models:
-    print(model.name + "\n")
-
+    print(model.name)
+    
     coords = model.location
-    position = []
+    pos = []
 
-    position.append(coords[1] * -1 + 0)
-    position.append(coords[0] * -1 + 0)
-    position.append(coords[2] + 0)
+    pos.append(coords[1] * -1)
+    pos.append(coords[0] * -1)
+    pos.append(coords[2])
 
-trans = ["%.2f" % p for p in position] 
-print(' '.join(trans) + "\n")
+    trans = ["%.2f" % p for p in pos]
+    print(' '.join(trans))
 
-# "%.2f" % num if num else '0'
-# out += ("0" if f == 0.0 else "%.2f" % f)
 
 ##########
 # TO-DOS #
