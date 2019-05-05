@@ -19,9 +19,11 @@ for model in models:
     pos.append(coords[0] * -1)
     pos.append(coords[2])
 
-    trans = ["%.2f" % p for p in pos]
-    print(' '.join(trans))
-
+    out = ""
+    for p in pos:
+        out += ("0" if p == 0.0 else "%.2f" % p)
+        out += " "
+    print(out + "0 0 0")
 
 ##########
 # TO-DOS #
@@ -29,6 +31,7 @@ for model in models:
 # read argparse
 # import sdformatpy
 # import io_scene_obj.export_obj
+# xml.etree
 
 # io_scene_obj.export_obj.save(bpy.context, output_filename, global_matrix=Matrix.Identity(4), use_normals=True)
 # output_obj_extension = output_filename.find('.obj')

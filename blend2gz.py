@@ -31,8 +31,8 @@ if __name__ == "__main__":
         coords = model.location
         pos = []
 
-        pos.append(coords[0] * -1)
         pos.append(coords[1] * -1)
+        pos.append(coords[0] * -1)
         pos.append(coords[2])
 
         trans = ["%.2f" % p for p in pos]
