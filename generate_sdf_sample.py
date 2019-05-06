@@ -44,9 +44,8 @@ def generate_include_uri_sdf(uri):
     uri_elem.text = uri
     return include
 
-def generate_imported_model_sdf(name, uri, pose_arrow,
-                                offset_x=0.0, offset_y=0.0, offset_z=0.0,
-                                roll=0.0, pitch=0.0, yaw=0.0,
+def generate_imported_model_sdf(name, uri, # pose_arrow,
+                                offset_x=0.0, offset_y=0.0, offset_z=0.00, pitch=0.0, yaw=0.0,
                                 scale=1.0, static=True, random_bounds=None):
     include = Element('include')
     name_elem = SubElement(include, 'name')
@@ -59,30 +58,12 @@ def generate_imported_model_sdf(name, uri, pose_arrow,
     uri_elem = SubElement(include, 'uri')
     uri_elem.text = uri
 
-    pose = SubElement(include, 'pose')
-    x, y, yaw = arrow_to_pose(pose_arrow, yaw, scale)
+    # pose = SubElement(include, 'pose')
+    # x, y, yaw = arrow_to_pose(pose_arrow, yaw, scale)
     z = offset_z
 
     x += offset_x*np.cos(yaw) + offset_y*np.sin(yaw)
     y += -offset_x*np.sin(yaw) + offset_y*np.cos(yaw)
-
-# don't think i need to use rand bounds as mine is not from SVG
-
-    if random_bounds is not None:
-
-        def get_rand(i):
-            return np.random.random(1).item(0) * (random_bounds[1][i] - random_bounds[0][i]) + random_bounds[0][i]
-
-        x += get_rand(0)
-        y += get_rand(1)
-        z += get_rand(2)
-        roll += get_rand(3)
-        pitch += get_rand(4)
-        yaw += get_rand(5)
-
-    pose.text = '{0} {1} {2} {3} {4} {5}'.format(x, y, z, roll, pitch, yaw)
-
-    return include
 
 def element_to_text(elem):
     output = StringIO.StringIO()
@@ -146,4 +127,23 @@ def add_imported_models_from_group_title(world, svg_doc, layer_group,
                                                  offset_x=offset_x, offset_y=offset_y,
                                                  offset_z=model_offset_z,
                                                  roll=roll, pitch=pitch, yaw=yaw,
-                                                 scale=scale, static=static, random_bounds=random_bounds))
+                                                 scale=scale, static=static, random_bounds=random_bounds)),
+                                roll=0.
+
+# this section not needed, only used for reference
+
+    if random_bounds is not None:
+
+        def get_rand(i):
+            return np.random.random(1).item(0) * (random_bounds[1][i] - random_bounds[0][i]) + random_bounds[0][i]
+
+        x += get_rand(0)
+        y += get_rand(1)
+        z += get_rand(2)
+        roll += get_rand(3)
+        pitch += get_rand(4)
+        yaw += get_rand(5)
+
+    pose.text = '{0} {1} {2} {3} {4} {5}'.format(x, y, z, roll, pitch, yaw)
+
+    return include
