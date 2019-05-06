@@ -29,9 +29,10 @@ for model in models:
 # TO-DOS #
 ##########
 # read argparse
-# import sdformatpy
 # import io_scene_obj.export_obj
 # xml.etree
+# blender xml parsing - https://blenderartists.org/t/xml-parsing/383339
+# don't parse xml from .dae as that doesn't have position
 
 # io_scene_obj.export_obj.save(bpy.context, output_filename, global_matrix=Matrix.Identity(4), use_normals=True)
 # output_obj_extension = output_filename.find('.obj')
