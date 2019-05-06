@@ -35,7 +35,10 @@ if __name__ == "__main__":
         pos.append(coords[0] * -1)
         pos.append(coords[2])
 
-        trans = ["%.2f" % p for p in pos]
-        f.write(' '.join(trans) + " 0 0 0\n")
+        out = ""
+        for p in pos:
+            out += ("0" if p == 0.0 else "%.2f" % p)
+            out += " "
+        f.write(out + "0 0 0" + "\n")
 
     f.close()
