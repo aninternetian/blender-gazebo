@@ -28,12 +28,10 @@ for model in models:
 ##########
 # TO-DOS #
 ##########
-# read argparse
+# xml.etree.ElementTree
+# don't parse .dae as that doesn't have position/what i need
+# wrap these things     # def model_name     # def model_location
+# argparse output xml into designated location
+# use blender GUI instead of argparse (blender button, etc)
+# add-on for blender
 # import io_scene_obj.export_obj
-# xml.etree
-# blender xml parsing - https://blenderartists.org/t/xml-parsing/383339
-# don't parse xml from .dae as that doesn't have position
-
-# io_scene_obj.export_obj.save(bpy.context, output_filename, global_matrix=Matrix.Identity(4), use_normals=True)
-# output_obj_extension = output_filename.find('.obj')
-# output_mtl_file = output_filename[:output_obj_extension] + '.mtl'

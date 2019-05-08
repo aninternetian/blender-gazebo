@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+  <model name='HCR-5'>
+    <static>true</static>
+    <link name="body">
+      <pose>0 0 0 0 0 0</pose>
+
+        <visual name="visual">
+          <geometry> 
+            <mesh><uri>model://HCR-5/meshes/base.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j1">
+        <pose>0 0 0.03 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j1.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j2">
+        <pose>0.08 0 0.15 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j2.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j3">
+        <pose>0.095 0 0.575 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j3.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j4">
+        <pose>0.109 0 0.914 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j4.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j5">
+        <pose>0.171 0 1.0035 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j5.obj</uri></mesh>
+          </geometry>
+        </visual>
+        <visual name="j6">
+        <pose>0.261 0 1.065 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j6.obj</uri></mesh>
+          </geometry>
+        </visual>
+
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/base.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j1">
+        <pose>0 0 0.03 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j1.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j2">
+        <pose>0.08 0 0.15 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j2.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j3">
+        <pose>0.095 0 0.575 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j3.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j4">
+        <pose>0.109 0 0.914 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j4.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j5">
+        <pose>0.171 0 1.0035 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j5.obj</uri></mesh>
+          </geometry>
+        </collision>
+        <collision name="j6">
+        <pose>0.261 0 1.065 0 0 0</pose>
+          <geometry>
+            <mesh><uri>model://HCR-5/meshes/j6.obj</uri></mesh>
+          </geometry>
+        </collision>
+
+    </link>
+  </model>
+</sdf>

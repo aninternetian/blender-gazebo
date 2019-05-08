@@ -127,7 +127,7 @@ def add_imported_models_from_group_title(world, svg_doc, layer_group,
                                                  offset_x=offset_x, offset_y=offset_y,
                                                  offset_z=model_offset_z,
                                                  roll=roll, pitch=pitch, yaw=yaw,
-                                                 scale=scale, static=static, random_bounds=random_bounds)),
+                                                 scale=scale, static=static)),
                                 roll=0.
 
 # this section not needed, only used for reference
