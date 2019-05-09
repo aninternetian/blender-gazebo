@@ -27,7 +27,6 @@ Your last line should look something like this:
 ## Disclaimer
 
 * Do NOT `apply location` of objects
-* SDF automation is not done yet, so you'll still need to fill in your sdf file with the coordinates and the model info.
-* You still have to export your models
-* One of my first few scripting projects.
-* Written to practice scripting, the Python syntax and to automate my work.
+* SDF automation and exports are not done yet
+* This was done to practice scripting, the Python syntax and to automate my work.
+* Excuse the ugly-ness since I'm still new at this.
