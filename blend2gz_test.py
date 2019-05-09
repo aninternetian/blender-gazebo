@@ -19,11 +19,9 @@ for model in models:
     pos.append(coords[0] * -1)
     pos.append(coords[2])
 
-    out = ""
-    for p in pos:
-        out += ("0" if p == 0.0 else "%.2f" % p)
-        out += " "
-    print(out + "0 0 0")
+    trans = ["%.2f" % p for p in pos]
+    print(' '.join(trans) + " 0 0 0")
+
 
 ##########
 # TO-DOS #
