@@ -11,7 +11,7 @@ if __name__ == "__main__":
     script_args = all_arguments[double_dash_index + 1:]
 
     parser.add_argument('input', help='Input .blend file')
-    parser.add_argument('output', help='Output .txt file for the coordinates')
+    parser.add_argument('output', help='Output .sdf file')
     args, _ = parser.parse_known_args(script_args)
 
     bpy.ops.wm.open_mainfile(filepath=args.input)
@@ -35,10 +35,7 @@ if __name__ == "__main__":
         pos.append(coords[0] * -1)
         pos.append(coords[2])
 
-        out = ""
-        for p in pos:
-            out += ("0" if p == 0.0 else "%.2f" % p)
-            out += " "
-        f.write(out + "0 0 0" + "\n")
+        trans = ["%.2f" % p for p in pos]
+        f.write(' '.join(trans) + " 0 0 0\n")
 
     f.close()

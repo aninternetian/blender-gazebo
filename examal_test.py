@@ -1,9 +1,7 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse('HCR-5.sdf')
-root = tree.getroot()
+f = open("model.sdf", 'w')
 
-vis_name = root.find("./model/link/visual[@name='j1']")
-vis_name.attrib["name"] = "Hospi"
-print(vis_name.attrib)
-# print(test)
+ElementTree.write()
+
+f.close()
