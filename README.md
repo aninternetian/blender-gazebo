@@ -34,4 +34,5 @@ Your last line should look something like this:
 * Do NOT `apply location` of objects
 * SDF automation and exports are in the process
 * This was done to practice scripting and to automate my work.
+* Still working on un-messy-fying the code
 * Feedback on code improvement greatly welcome!
