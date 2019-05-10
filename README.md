@@ -1,20 +1,25 @@
 ## What it does
 
-It collects all models and their locations, convert it's coordinates into an SDF format.
+To import a robot from Blender into Gazebo, it should be modelled into separate parts (wheels, joints, etc).
+This script converts each part into an SDF friendly format.
 
-Example you have a robot with 6 wheels.
-This script will gather all the locations of the wheels and the robot.
+1. Change Blender units into meters
+2. Collect each part name and location coordinates (X, Y, Z)
+3. Print out a txt.log into an SDF format.
 
 ## How to use
 
-Open terminal in mesh folder
+Open terminal in the working mesh folder
 
 ```
 source ~/rmf/build/ros1_mainline/install/setup.bash
 ```
 
-Type in the following line:  
-`blender -b -P ~/blender2gazebo/blend2gz.py --  `
+Type in the following line:
+
+```
+blender -b -P ~/blender2gazebo/blend2gz.py -- 
+```
 
 Along with:
 
@@ -24,9 +29,9 @@ Along with:
 Your last line should look something like this:  
 `blender -b -P ~/blender2gazebo/blend2gz.py -- silly_robot.blend output_text.txt`
 
-## Disclaimer
+## Final notes
 
 * Do NOT `apply location` of objects
-* SDF automation and exports are not done yet
-* This was done to practice scripting, the Python syntax and to automate my work.
-* Excuse the ugly-ness since I'm still new at this.
+* SDF automation and exports are in the process
+* This was done to practice scripting and to automate my work.
+* Feedback on code improvement greatly welcome!
