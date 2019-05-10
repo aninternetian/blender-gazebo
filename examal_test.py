@@ -1,7 +1,11 @@
-import xml.etree.ElementTree as ET
+import xml.etree.cElementTree as ET
 
-f = open("model.sdf", 'w')
+# write xml file - https://stackoverflow.com/questions/3605680/creating-a-simple-xml-file-using-python
 
-ElementTree.write()
+sdf = ET.Element('sdf', {'version': '1.6'})
+model = ET.SubElement(sdf, 'model')
 
-f.close()
+model.set('name', 'default')    # model.append(robot_name)
+
+tree = ET.ElementTree(sdf)
+tree.write('model.sdf')
