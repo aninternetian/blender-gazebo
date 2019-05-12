@@ -1,28 +1,16 @@
 import xml.etree.ElementTree as ET
 
-# write xml file - https://stackoverflow.com/questions/3605680/creating-a-simple-xml-file-using-python
+# create the file structure
+data = ET.Element('data')  
+items = ET.SubElement(data, 'items')  
+item1 = ET.SubElement(items, 'item')  
+item2 = ET.SubElement(items, 'item')  
+item1.set('name','item1')  
+item2.set('name','item2')  
+item1.text = 'item1abc'  
+item2.text = 'item2abc'
 
-def indent(elem, level=0):
-    i = "\n" + level*"  "
-    if len(elem):
-        if not elem.text or not elem.text.strip():
-            elem.text = i + "  "
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = i
-        for elem in elem:
-            indent(elem, level+1)
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = i
-    else:
-        if level and (not elem.tail or not elem.tail.strip()):
-            elem.tail = i
-
-
-sdf = ET.Element('sdf', {'version': '1.6'})
-model = ET.SubElement(sdf, 'model')
-
-model.set('name', 'robot_name')    # model.append()
-
-tree = ET.ElementTree(sdf)
-indent(sdf)
-tree.write('model.sdf', xml_declaration=True, encoding='utf-8')
+# create a new XML file with the results
+mydata = ET.tostring(data)  
+myfile = open("items2.xml", "w")  
+myfile.write(mydata)

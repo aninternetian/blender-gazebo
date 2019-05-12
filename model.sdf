@@ -1,4 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.6">
-  <model name="default" />
+  <model name="robot_name">
+    <link name="body" />
+    <static>
+      <pose />
+    </static>
+  </model>
 </sdf>
