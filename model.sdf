@@ -1,1 +1,4 @@
-<sdf version="1.6"><doc /><model name="default" /></sdf>
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.6">
+  <model name="default" />
+</sdf>
