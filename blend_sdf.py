@@ -26,7 +26,6 @@ for model in models:
 ##########
 # TO-DOS #
 ##########
-# xml.etree.ElementTree
 # don't parse .dae as that doesn't have position/what i need
 # wrap these things     # def model_name     # def model_location
 # argparse output xml into designated location

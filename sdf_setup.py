@@ -22,7 +22,9 @@ def model_name():
     return 'robo_name'
 
 def uri_location():
-    return 'model://robot_name/meshes/robot.obj'
+    # uri.text = 'model://'
+    # model_name()/meshes/model_name().obj
+    return 'model://robot_name/meshes/robot.obj' #  fill manually for now
 
 def vis_col_container():
     mesh = ET.SubElement(geometry, 'mesh')
