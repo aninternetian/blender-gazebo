@@ -9,7 +9,7 @@ This script converts each part into an SDF friendly format.
 
 ## How to use
 
-Open terminal in the working mesh folder
+Clone this repo into your home folder and open the terminal from the folder where the final blender model is in.
 
 ```
 source ~/rmf/build/ros1_mainline/install/setup.bash
@@ -31,8 +31,9 @@ Your last line should look something like this:
 
 ## Final notes
 
-* Do NOT `apply location` of objects
+* There is another version of the script which runs in the Blender GUI. This is mostly used for testing.
+* Do NOT `apply location` of objects.
 * SDF automation and exports are in the process
 * This was done to practice scripting and to automate my work.
-* Still working on un-messy-fying the code
 * Feedback on code improvement greatly welcome!
+* Code is messy at the moment and cleaning up will happen when possible.
