@@ -1,4 +1,4 @@
-'''Translates all objects location in the blender scene into the gazebo SDF'''
+'''This works in headless mode'''
 
 import argparse
 import bpy
