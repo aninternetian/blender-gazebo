@@ -19,13 +19,34 @@ def indent(elem, level=0):
 
 sdf = ET.Element('sdf', {'version': '1.6'})
 model = ET.SubElement(sdf, 'model')
-model.set('name', 'robot_name')    # model.append()
+model.set('name', 'robot_name')     # modelName()
+
+static = ET.SubElement(model, 'static')
+static.text = 'true'    # most models are static unless specified
 link = ET.SubElement(model, 'link')
 link.set('name', 'body')
-static = ET.SubElement(model, 'static') # one line needed
+pose = ET.SubElement(link, 'pose')
+pose.text = '0 0 0 0 0 0'   # main pose
 
-pose = ET.SubElement(static, 'pose') # format {0 0 0 0 0 0}
+visual = ET.SubElement(link, 'visual')
+visual.set('name', 'visual')
 
+pose = ET.SubElement(visual, 'pose')
+pose.text = '0 0 0 0 0 0'   # main pose
+geometry = ET.SubElement(visual, 'geometry')
+mesh = ET.SubElement(geometry, 'mesh')
+uri = ET.SubElement(mesh, 'uri')
+uri.text = 'model://robot_name/meshes/robot.obj' #  manually fill for now
+
+collision = ET.SubElement(link, 'collision')
+collision.set('name', 'collision')
+
+pose = ET.SubElement(collision, 'pose')
+pose.text = '0 0 0 0 0 0'   # main pose
+geometry = ET.SubElement(collision, 'geometry')
+mesh = ET.SubElement(geometry, 'mesh')
+uri = ET.SubElement(mesh, 'uri')
+uri.text = 'model://robot_name/meshes/robot.obj'
 
 tree = ET.ElementTree(sdf)
 indent(sdf)
