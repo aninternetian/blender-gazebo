@@ -13,7 +13,7 @@ def model_name():
     for model in models:
         print(model.name)
 
-def cooords(model):
+def model_location(model):
 
     coords = model.location
     pos = []
@@ -24,6 +24,8 @@ def cooords(model):
 
     trans = ["%.2f" % p for p in pos]
     print(' '.join(trans) + " 0 0 0")
+
+model_location()
 
 ##########
 # TO-DOS #
