@@ -7,7 +7,7 @@ scene = bpy.context.scene
 scene.unit_settings.system = 'METRIC'
 scene.unit_settings.scale_length = 1.0
 
-def model_name():
+def write_models_name():
     models = bpy.data.objects
 
     for model in models:
