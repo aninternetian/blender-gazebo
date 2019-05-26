@@ -8,7 +8,7 @@ scene.unit_settings.system = 'METRIC'
 scene.unit_settings.scale_length = 1.0
 
 for model in bpy.data.objects:
-    print("tralala")
+    print("test")
     #addToXml(model)
 
 def write_models_name():
