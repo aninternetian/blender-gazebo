@@ -18,7 +18,7 @@ source ~/rmf/build/ros1_mainline/install/setup.bash
 Type in the following line:
 
 ```
-blender -b -P ~/blender2gazebo/blend2gz.py -- 
+blender -b -P ~/blender-gazebo/blend2gz.py -- 
 ```
 
 Along with:
@@ -27,7 +27,7 @@ Along with:
 * Text file name, eg: `output_text.txt`
 
 Your last line should look something like this:  
-`blender -b -P ~/blender2gazebo/blend2gz.py -- silly_robot.blend output_text.txt`
+`blender -b -P ~/blender-gazebo/blend2gz.py -- silly_robot.blend output_text.txt`
 
 ## Final notes
 
