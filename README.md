@@ -9,6 +9,10 @@ This script converts each part into an SDF friendly format.
 
 ## How to use
 
+In Blender, export each robo part as an .obj:
+`Forward: Y Forward`
+`Up: Z Up`
+
 Clone this repo into your home folder and open the terminal from the folder where the final blender model is in.
 
 ```
