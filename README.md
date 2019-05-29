@@ -32,8 +32,10 @@ Your last line should look something like this:
 ## Final notes
 
 * There is another version of the script which runs in the Blender GUI. This is mostly used for testing.
-* Do NOT `apply location` of objects.
+* Click on `Apply: Location` ONLY for the main body/part.
+* Click on `Apply: Rotation & Scale` for each part.
 * SDF automation and exports are in the process
 * This was done to practice scripting and to automate my work.
 * Feedback on code improvement greatly welcome!
 * Code is messy at the moment and cleaning up will happen when possible.
+
