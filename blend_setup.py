@@ -7,11 +7,14 @@ scene = bpy.context.scene
 scene.unit_settings.system = 'METRIC'
 scene.unit_settings.scale_length = 1.0
 
-for model in bpy.data.objects:
-    print("test")
-    #addToXml(model)
+def check_models():
 
-def write_models_name():
+    models = bpy.data.objects
+
+    for model in models:
+        return model
+
+def write_models_name(model):
     print(model.name)
 
 def model_location(model):
@@ -19,11 +22,11 @@ def model_location(model):
     coords = model.location
     pos = []
 
-    pos.append(coords[1] * -1)
-    pos.append(coords[0] * -1)
+    pos.append(coords[0])
+    pos.append(coords[1])
     pos.append(coords[2])
 
-    trans = ["%.2f" % p for p in pos]
+    trans = ["%.3f" % p for p in pos]
     print(' '.join(trans) + " 0 0 0")
 
 
