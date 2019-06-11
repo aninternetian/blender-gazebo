@@ -28,15 +28,3 @@ def model_location(model):
 
     trans = ["%.3f" % p for p in pos]
     print(' '.join(trans) + " 0 0 0")
-
-
-##########
-# TO-DOS #
-##########
-# don't parse .dae as that doesn't have position/what i need
-# wrap these things     # def model_name     # def model_location
-# setup as module?
-# argparse output xml into designated location
-# use blender GUI instead of argparse (blender button, etc)
-# add-on for blender
-# import io_scene_obj.export_obj
