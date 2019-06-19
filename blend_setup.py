@@ -7,17 +7,18 @@ scene = bpy.context.scene
 scene.unit_settings.system = 'METRIC'
 scene.unit_settings.scale_length = 1.0
 
-def check_models():
+retrieveModelInfo = bpy.data.objects
 
-    models = bpy.data.objects
+def modelNames(blendInfo):
+    for modelName in retrieveModelInfo:
+        print(modelName.name)
 
-    for model in models:
-        return model
+modelNames(retrieveModelInfo)    # this will only return the model name
 
-def write_models_name(model):
-    print(model.name)
+#def modelLocation(blendInfo):
 
-def model_location(model):
+
+'''def model_location(model):
 
     coords = model.location
     pos = []
@@ -27,4 +28,4 @@ def model_location(model):
     pos.append(coords[2])
 
     trans = ["%.3f" % p for p in pos]
-    print(' '.join(trans) + " 0 0 0")
+    print(' '.join(trans) + " 0 0 0")'''
