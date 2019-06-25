@@ -14,7 +14,6 @@ System export
 * Export to folder (ability to name folder)
 * Create subfolder "meshes"
 
-
 ## Note to self
 
 * Not parse .dae (doesn't have position/what i need)

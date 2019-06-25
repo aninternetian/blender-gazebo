@@ -18,9 +18,6 @@ def indent(elem, level=0):
 def get_pose(): 
     return '0 0 0 0 0 0'
 
-def model_name():
-    return 'robo_name'
-
 def uri_location():
     # uri.text = 'model://'
     # model_name()/meshes/model_name().obj
@@ -33,7 +30,8 @@ def vis_col_container():
 
 sdf = ET.Element('sdf', {'version': '1.6'})
 model = ET.SubElement(sdf, 'model')
-model.set('name', model_name())
+# model.set('name', model_name())     # retrieve from common_functions.py
+model.set('name', 'file_name')
 
 static = ET.SubElement(model, 'static')
 static.text = 'true'    # modelled assets are static unless specified
